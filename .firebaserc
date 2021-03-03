@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projeto-nathalia-aguiar": {
+      "hosting": {
+        "app": [
+          "projeto-nathalia-aguiar"
+        ]
+      }
+    }
+  }
+}
