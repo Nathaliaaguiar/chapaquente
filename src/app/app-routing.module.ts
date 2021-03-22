@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+
+  // Rota para a página inicial
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'articles',
     pathMatch: 'full'
   },
+
+  // Rota para a página 'Artigos'
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    path: 'articles',
+    loadChildren: () => import('./pages/articles/articles.module').then( m => m.ArticlesPageModule)
   },
   {
     path: 'news',
@@ -22,6 +26,17 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'view/:id',
+    loadChildren: () => import('./pages/view/view.module').then( m => m.ViewPageModule)
+  },
+
+  // Página de erro 404
+  // '**' TEM QUE SER SEMPRE A ÚLTIMA ROTA
+  {
+    path: '**',
+    loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
   }
 ];
 

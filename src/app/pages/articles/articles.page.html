@@ -1,23 +1,25 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Arti</ion-title>
-    </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Artigos</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
 
-    <!-- 1) Exibe artigos, um de cada vez (loop) -->
+  <!-- 1) Exibe artigos, um de cada vez (loop) -->
 
-    <div *ngFor="let art of item | async">
-        <ion-card class="ion-no-margin ion-margin-bottom" routerLink="/view/{{ art.id }}">
-            <img src="{{ art.img }}" alt="{{ art.title }}" title="{{ art.title }}">
-            <ion-card-header>
-                <ion-card-title>{{ art.title }}</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>{{ art.intro }}</ion-card-content>
-        </ion-card>
-    </div>
+  <div *ngFor="let art of items | async">
+
+    <ion-card class="ion-no-margin ion-margin-bottom" routerLink="/view/{{ art.id }}">
+      <img src="{{ art.img }}" alt="{{ art.title }}" title="{{ art.title }}">
+      <ion-card-header>
+        <ion-card-title>{{ art.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ art.intro }}</ion-card-content>
+    </ion-card>
+
+  </div>
 
 </ion-content>

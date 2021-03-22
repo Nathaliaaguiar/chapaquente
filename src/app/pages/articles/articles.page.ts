@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class ArticlesPage implements OnInit {
 
   // 3) Atributos
-  item: Observable<any[]>;
+  items: Observable<any[]>;
 
   // 3.1) Atributos
   private itemsCollection: AngularFirestoreCollection<any>;
@@ -43,7 +43,7 @@ export class ArticlesPage implements OnInit {
     );
 
     // 5. Obtém os ítens da coleção e também o 'id' de cada item.
-    this.item = this.itemsCollection.valueChanges({ idField: 'id' });
+    this.items = this.itemsCollection.valueChanges({ idField: 'id' });
 
   }
 

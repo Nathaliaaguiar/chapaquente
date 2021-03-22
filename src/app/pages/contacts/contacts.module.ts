@@ -5,15 +5,17 @@ import { IonicModule } from '@ionic/angular';
 import { ContactsPageRoutingModule } from './contacts-routing.module';
 import { ContactsPage } from './contacts.page';
 
-// Importa Reactive Forms do Angular
+// 1) Importa módulo de formulários reativos do Angular
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule,  
     FormsModule,
     IonicModule,
     ContactsPageRoutingModule,
+
+    // 2) Importa módulo
     ReactiveFormsModule
   ],
   declarations: [ContactsPage]
