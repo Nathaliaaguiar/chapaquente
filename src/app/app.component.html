@@ -40,6 +40,48 @@
 
         </ion-list>
 
+        <ion-list>
+
+          <!-- Se tem usuário logado -->
+
+          <div *ngIf="auth.user | async as user; else showLogin">
+
+            <ion-menu-toggle auto-hide="false">
+
+              <ion-item routerDirection="root" routerLink="/user/profile" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-avatar slot="start">
+                <ion-img src="{{ user.photoURL }}" alt="Ver perfil de {{ user.displayName }}"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                {{ user.displayName }}
+                <div><small>{{ user.email }}</small></div>                
+              </ion-label>
+            </ion-item>
+
+            </ion-menu-toggle>
+
+          </div>
+
+          <!-- Mostra login se usuário não está logado -->
+          <ng-template #showLogin>
+
+            <ion-menu-toggle auto-hide="false">
+
+              <ion-item routerDirection="root" routerLink="/user/login" lines="none" detail="false"
+                routerLinkActive="selected">
+                <ion-avatar slot="start">
+                  <ion-img src="assets/user.png" alt="Faça login"></ion-img>
+                </ion-avatar>
+                <ion-label>Entrar / Login</ion-label>
+              </ion-item>
+
+            </ion-menu-toggle>
+
+          </ng-template>
+
+        </ion-list>
+
       </ion-content>
 
       <div class="ion-text-center ion-padding">

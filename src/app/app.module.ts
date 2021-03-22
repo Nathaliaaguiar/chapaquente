@@ -14,6 +14,9 @@ import { environment } from '../environments/environment';
 // 4) Importa módulo do Firestore
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+// 5) Importa módulo do Authentication
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,9 +29,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
 
     // 5) Incorporar módulo do Firestore
-    AngularFirestoreModule
+    AngularFirestoreModule,
+
+    // 6) Incorpora módulo Authentication
+    AngularFireAuthModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
