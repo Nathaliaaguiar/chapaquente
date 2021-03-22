@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-// 1) Importa módulo do Firebase
-import { AngularFireModule } from '@angular/fire';
-
-// 2) Importa configuração do aplicativo
-import { environment } from '../environments/environment';
-
-// 4) Importa módulo do Firestore
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,13 +18,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     IonicModule.forRoot(),
     AppRoutingModule,
 
-    // 3) Incorporar módulo do Firebase
+    // 1) Inicializar Firebase e API's
     AngularFireModule.initializeApp(environment.firebase),
-
-    // 5) Incorporar módulo do Firestore
-    AngularFirestoreModule
+    AngularFirestoreModule,
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

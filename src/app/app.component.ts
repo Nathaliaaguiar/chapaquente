@@ -6,12 +6,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inicio', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Cardapio', url: '/folder/Outbox', icon: 'fast-food' },
-    { title: 'Contatos', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Sobre', url: '/folder/Archived', icon: 'storefront' },
-
+    { title: 'Início', url: '/home', icon: 'home' },
+    { title: 'Notícias', url: '/news', icon: 'newspaper' },
+    { title: 'Faça Contato', url: '/contacts', icon: 'chatbubbles' },
+    { title: 'Sobre', url: '/about', icon: 'information-circle' }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  constructor() { }
 }

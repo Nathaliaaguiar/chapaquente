@@ -1,11 +1,13 @@
 export const environment = {
   production: true,
+
+  // Conexão com o  Firebase.com
   firebase: {
-    apiKey: "AIzaSyCacvxgz-W3thPmTkqtDVWv9JXWl67NJjo",
-    authDomain: "projeto-nathalia-aguiar.firebaseapp.com",
-    projectId: "projeto-nathalia-aguiar",
-    storageBucket: "projeto-nathalia-aguiar.appspot.com",
-    messagingSenderId: "809522703078",
-    appId: "1:809522703078:web:a2be3e720e453543bbe927"
+    apiKey: "AIzaSyB1lTc_BobxDWbK3Jg7eVlk9EyFXf9dQaw",
+    authDomain: "project-five-51160.firebaseapp.com",
+    projectId: "project-five-51160",
+    storageBucket: "project-five-51160.appspot.com",
+    messagingSenderId: "863548418040",
+    appId: "1:863548418040:web:8e526813f0b8b2c63f580d"
   }
 };
